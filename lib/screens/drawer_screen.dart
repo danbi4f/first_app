@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:paidwork_dummy/main.dart';
 import 'package:paidwork_dummy/screens/analytics_screen.dart';
@@ -141,7 +142,9 @@ class DrawerScreen extends StatelessWidget {
               'Wyloguj',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
-            onTap: () {},
+            onTap: () {
+              FirebaseAuth.instance.signOut();
+            },
             selected: true,
           ),
         ],
